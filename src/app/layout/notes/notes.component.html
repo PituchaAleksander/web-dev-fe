@@ -1,0 +1,23 @@
+<div class="notes-container">
+  <div class="list-container">
+    <div class="list">
+      <div class="note" *ngFor="let note of data" (click)="select(note)">
+        <div class="note-title">{{note.title}}</div><div [ngClass]="note.status">{{note.status}}</div>
+        <img class="delete-icon" src="../../../assets/img/bin.svg" (click)="delete(note.id)"/>
+      </div>
+    </div>
+    <div class="add-button" (click)="addNote()"><p class="button-text">Add note</p></div>
+  </div>
+  <div class="view-container">
+    <p>Title:</p>
+    <input class="title" [(ngModel)]="request.title">
+    <p>Content:</p>
+    <textarea class="content" [(ngModel)]="request.content"></textarea>
+    <div class="view-control-container">
+      <select class="status-select" [(ngModel)]="request.status" [disabled]="selectNoteId == undefined">
+        <option *ngFor="let status of statusSelect" [ngValue]="status">{{status}}</option>
+      </select>
+      <div class="save-button" (click)="saveNote()"><p class="button-text">Save</p></div>
+    </div>
+  </div>
+</div>

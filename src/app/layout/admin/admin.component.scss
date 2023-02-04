@@ -1,0 +1,17 @@
+.view-container{
+  .content{
+    height: 60vh;
+  }
+}
+
+.user-select-container{
+  height: 60px;
+  padding: 10px 30px;
+  background-color: rgb(187, 211, 216);
+  border-bottom: 1px solid rgb(166, 166, 166);
+
+  .user-select{
+    height: 40px;
+    width: 292px;
+  }
+}

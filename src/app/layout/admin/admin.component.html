@@ -1,0 +1,21 @@
+<div class="notes-container">
+  <div class="list-container">
+    <div class="user-select-container">
+      <select class="user-select" [ngModel]="selectUser" (ngModelChange)="clickUser($event)">
+        <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
+      </select>
+    </div>
+    <div class="list">
+      <div class="note" *ngFor="let note of data" (click)="select(note)">
+        <div class="note-title">{{note.title}}</div><div [ngClass]="note.status">{{note.status}}</div>
+        <img class="delete-icon" src="../../../assets/img/bin.svg" (click)="delete(note.id)"/>
+      </div>
+    </div>
+  </div>
+  <div class="view-container">
+    <p>Title:</p>
+    <input class="title" [(ngModel)]="selectData.title" disabled>
+    <p>Content:</p>
+    <textarea class="content" [(ngModel)]="selectData.content" disabled></textarea>
+  </div>
+</div>

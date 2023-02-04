@@ -1,0 +1,9 @@
+<div class="header">
+    <div class="logo"><img class="icon" src="../../assets/img/logo.svg" />NoteBook</div>
+    <div class="header-button" *ngIf="authService.getRole()!=0" (click)="click('/layout/notes')">Notes</div>
+    <div class="header-button cart" *ngIf="authService.getRole()!=0"  (click)="click('/layout/history')">Notes history</div>
+    <div class="header-button logout" (click)="logout()">Logout</div>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,2 @@
+<app-notes *ngIf="authService.getRole()!=0"></app-notes>
+<app-admin *ngIf="authService.getRole()==0"></app-admin>

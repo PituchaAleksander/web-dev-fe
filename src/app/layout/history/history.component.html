@@ -1,0 +1,15 @@
+<div class="notes-container">
+  <div class="list-container">
+    <div class="list">
+      <div class="note" *ngFor="let note of data" (click)="select(note)">
+        <div class="note-title">{{note.title}}</div><div [ngClass]="note.status">{{note.status}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="view-container">
+    <p>Title:</p>
+    <input class="title" [(ngModel)]="selectData.title" disabled>
+    <p>Content:</p>
+    <textarea class="content" [(ngModel)]="selectData.content" disabled></textarea>
+  </div>
+</div>
